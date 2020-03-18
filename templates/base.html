@@ -7,8 +7,8 @@
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='screen.css') }}">
 </head>
 <body>
-    <h1>{{ title }}</h1>
 	<div id="promo">{% block promo %}{% endblock %}</div>
+    <h1>{{ title }}</h1>
 	
     <div id="content">
         {% block content %}{% endblock %}

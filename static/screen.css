@@ -16,17 +16,32 @@ input[type=submit] { margin-left: 10px; }
 
 #credits { font-size: 70%; text-align: right; margin-top: 30px; }
 #hits { font-size: 120%; font-weight: bold; }
-#promo { position: absolute; top: 10px; right: 10px; }
 
-@-webkit-keyframes blinker {
-  from {opacity: 1.0;}
-  to {opacity: 0.0;}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
-.blink{
-	text-decoration: blink;
-	-webkit-animation-name: blinker;
-	-webkit-animation-duration: 0.6s;
-	-webkit-animation-iteration-count:infinite;
-	-webkit-animation-timing-function:ease-in-out;
-	-webkit-animation-direction: alternate;
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+/* https://getbootstrap.com/docs/4.4/layout/overview/#responsive-breakpoints */
+@media (max-width: 575.98px) {
+  #promo {
+    text-align: right;
+  }
+}
+
+@media (min-width: 576px) {
+  body {
+    position: relative;
+  }
+
+  #promo {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
